@@ -6,7 +6,7 @@ public class Dish {
     private String name;
 
     private Fridge fridge;
-    private List<Amount> amountList;
+    private List<DishProduct> dishProductList = new ArrayList<>();
 
 
     public Dish(String name) {
@@ -28,6 +28,14 @@ public class Dish {
 
     public Fridge getFridge() {
         return fridge;
+    }
+
+    public void addProduct(Product product, int amount){
+        dishProductList.add(new DishProduct(amount, this, product));
+    }
+
+    public void addDishProduct(DishProduct dishProduct){
+        dishProductList.add(dishProduct);
     }
 
     @Override
